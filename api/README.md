@@ -2,8 +2,10 @@
 Sigue estos pasos para configurar y ejecutar el proyecto:
 
 Clona el repositorio en tu máquina local:
-git clone https://github.com/tu-usuario/quotes-api.git
-cd quotes-api
+
+git clone https://github.com/GbrielGarcia/blog.git
+
+- api
 
 ## Instala las dependencias necesarias:
 
