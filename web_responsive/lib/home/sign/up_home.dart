@@ -37,29 +37,8 @@ class _SignUpHomeState extends State<SignUpHome> {
     final countryProvider =
         ProyectsProvider.countryProvider(context).selectedCountry;
 
-    // Definir el modelo Shop basado en los controladores
-    ShopModel shop = ShopModel(
-      nameShop: _controllerNameShop.text,
-      description: _controllerDescriptionShop.text,
-      countryShop: countryProvider?.name ?? 'Ecuador',
-      shortUrl: _controllerNameLinkShop.text,
-      phone: _controllerPhoneShop?.text ?? '593',
-      phoneCode: countryProvider?.code ?? 'EC',
-      fontText: 'Rubik',
-      colorText: '0xff5f5770',
-      colorBackground: '0xffcaf3ed',
-      colorIcons: '0xffcbabc9',
-    );
-
-    // Definir el modelo Supplier basado en los controladores
-    SupplierModel supplier = SupplierModel(
-        nameSupplier: _controllerUser.text,
-        email: _controllerEmail.text,
-        password: _controllerPasswordVerification.text,
-        shorShopLink: _controllerNameLinkShop.text);
-
     // Función para registrar al usuario
-    void _signUp(BuildContext context) async {
+    void signUp(BuildContext context) async {
       if (_formKey.currentState!.validate()) {
         // Imprimir los valores de los controladores para verificar
         print("Nombre de usuario: ${_controllerUser.text}");
@@ -70,8 +49,7 @@ class _SignUpHomeState extends State<SignUpHome> {
             _controllerEmail.text.isEmpty ||
             _controllerPasswordVerification.text.isEmpty ||
             _controllerNameShop.text.isEmpty ||
-            countryProvider != null
-          ) {
+            countryProvider != null) {
           SnackBarWidget.showErrorSnackBar(
               context, 'Todos los campos ( * ) deben ser llenados');
 
@@ -89,8 +67,6 @@ class _SignUpHomeState extends State<SignUpHome> {
               context, 'Debe de poner un numero valido');
           return;
         }
-
-
       }
     }
 
@@ -115,7 +91,7 @@ class _SignUpHomeState extends State<SignUpHome> {
             if (kDebugMode) {
               print('Creando cuenta...');
             }
-            _signUp(context);
+            signUp(context);
           },
         );
         break;
@@ -223,7 +199,7 @@ class _SignUpHomeState extends State<SignUpHome> {
                               children: [
                                 inkWellContainer(
                                   context,
-                                  () => _signUp(context),
+                                  () => signUp(context),
                                   'Crear Cuenta',
                                 ),
                                 SizedBox(height: ConstsUtils.sSmall),
