@@ -27,7 +27,6 @@ class SingUpCreateHome extends StatefulWidget {
 }
 
 class _SingUpCreateHomeState extends State<SingUpCreateHome> {
-  final _formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
@@ -89,7 +88,7 @@ class _SingUpCreateHomeState extends State<SingUpCreateHome> {
             ),
             context),
         SizedBox(height: ConstsUtils.sSmall),
-        CountrySearchWidget(countryCodes: [
+        const CountrySearchWidget(countryCodes: [
           'EC',
           'PE',
           'CO',
@@ -104,7 +103,7 @@ class _SingUpCreateHomeState extends State<SingUpCreateHome> {
         if (selectedContryProvider != null)
           columnForm('Numero de contacto de tu negocio *', TextInputType.number,
               controller: widget.controllerPhoneShop,
-              maxLength: selectedContryProvider!.maxLength,
+              maxLength: selectedContryProvider.maxLength,
               inputFormatters: [
                 FilteringTextInputFormatter.allow(RegexUtils.numberR)
               ],
@@ -141,9 +140,9 @@ class CountrySearchWidget extends StatefulWidget {
   final List<String> countryCodes;
 
   const CountrySearchWidget({
-    Key? key,
+    super.key,
     required this.countryCodes,
-  }) : super(key: key);
+  });
 
   @override
   _CountrySearchWidgetState createState() => _CountrySearchWidgetState();
@@ -208,7 +207,7 @@ class _CountrySearchWidgetState extends State<CountrySearchWidget> {
                 ? Padding(
                     padding: const EdgeInsets.only(right: 7.0),
                     child: Image.asset(
-                      selectedContryProvider!.flagImage!,
+                      selectedContryProvider.flagImage!,
                       width: 24, // Tamaño del icono
                       height: 24,
                     ),

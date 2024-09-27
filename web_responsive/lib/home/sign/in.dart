@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:web_responsive/utils/utils.dart';
 import 'package:provider/provider.dart';
@@ -22,8 +21,6 @@ class _SingInHomeState extends State<SingInHome> {
   @override
   Widget build(BuildContext context) {
     final accountSwitchProvider = Provider.of<AccountStateProvider>(context);
-
-
 
     return Form(
       key: _formKey,
