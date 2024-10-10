@@ -1,0 +1,22 @@
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
+Future<void> obtenerFrase() async {
+  final respuesta = await http.get(
+    Uri.parse('https://api.adviceslip.com/advice'),
+  );
+
+  if (respuesta.statusCode == 200) {
+    print(respuesta.body); // Imprime la respuesta completa en formato JSON
+
+    final jsonData = jsonDecode(respuesta.body);
+    final frase = jsonData['slip']['advice'];
+    print(frase);
+  } else {
+    print('Error');
+  }
+}
+
+void main() async {
+  await obtenerFrase();
+}

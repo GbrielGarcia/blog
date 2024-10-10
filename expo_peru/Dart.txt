@@ -1,0 +1,20 @@
+Dart fue presentado al público en la conferencia GOTO en Dinamarca en 2011.
+fue criticado por intentar reemplazar a JavaScript.
+
+Despues google hizo un cambio estratégico, enfoncándose en hacer Dart
+un lenguaje más versátil..
+
+Dart comenzó a ganar más popularidad, cuando lanzaron a Flutter en el 2018.
+
+la actualización mas importante fue en el 2018 agregaron el null safety
+agregando características como seguridad en los tipos de datos.
+
+Usos de Dart.
+Uno de los principales usos de Dart es el desarrollo de aplicaciones móviles con Flutter.
+Dart no se limita solo al desarrollo móvil. También se utiliza en aplicaciones web mediante su compilación a JavaScript
+
+
+
+
+Conclusiones
+Dart ha evolucionado significativamente desde su inicio, adaptándose a las necesidades del desarrollo multiplataforma moderno. Lo que comenzó como un intento de mejorar el rendimiento de las aplicaciones web ha crecido para ser un lenguaje completo que permite crear aplicaciones móviles, web y de escritorio con un solo código base. 

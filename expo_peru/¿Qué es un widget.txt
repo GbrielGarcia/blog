@@ -1,0 +1,14 @@
+¿Qué es un widget?
+
+Es una clase que puede tener argumentos, TODO en flutter, son widgets.
+
+// void, ya que no devuelve nada // cupertino / material
+void main(){
+runApp(app)
+}
+
+// StatelessWidget no mantiene el estado
+// StateFullWidget mantiene el estado
+
+class MyApp extends StatelessWidget {
+}
